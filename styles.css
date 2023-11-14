@@ -75,4 +75,5 @@ footer {
 footer a {
     color: #fff; 
     text-decoration: underline; 
+    font-size: larger;
 }
