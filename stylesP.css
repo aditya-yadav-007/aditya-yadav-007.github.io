@@ -6,7 +6,7 @@ body, h1, h2, h3, p, ul {
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('lab.png'); 
+    background-image: url('Backgrounds/lab.png'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
