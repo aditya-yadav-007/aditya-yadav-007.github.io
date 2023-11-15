@@ -61,11 +61,13 @@ h2 {
     display: flex;
     justify-content: flex-end; /* Align items to the right */
     width: 35%;
+    position: fixed;
+    right: 40px;
 }
 
 .circular-image {
     border-radius: 50%;
-    width: 80%; /* Ensure the image takes up the entire circular container */
+    width: 50%; /* Ensure the image takes up the entire circular container */
 }
 
 footer {
