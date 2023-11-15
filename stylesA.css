@@ -40,6 +40,7 @@ nav ul li a {
 
 main {
     padding: 20px;
+    font-size: large;
 }
 
 section {
@@ -59,7 +60,7 @@ h2 {
 
 .image-container {
     display: flex;
-    justify-content: flex-end; /* Align items to the right */
+    justify-content: flex-end; 
     width: 35%;
     position: fixed;
     right: 40px;
@@ -67,7 +68,7 @@ h2 {
 
 .circular-image {
     border-radius: 50%;
-    width: 50%; /* Ensure the image takes up the entire circular container */
+    width: 50%; /* Ensure the image takes up the entire circular container */  
 }
 
 footer {
