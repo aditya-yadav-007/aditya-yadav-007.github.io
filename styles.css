@@ -15,6 +15,8 @@ body {
 
 header {
     background-color: rgba(65, 48, 176, 0.3); 
+    forced-color-adjust: #fff;
+    
     color: #fff;
     padding: 15px 20px;
     display: flex;
@@ -23,6 +25,11 @@ header {
     font-size: x-large;
 }
 
+header a
+{
+    color: #fff; 
+    text-decoration: unset;
+}
 
 nav ul {
     list-style: none;
