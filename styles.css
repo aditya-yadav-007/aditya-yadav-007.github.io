@@ -80,7 +80,7 @@ nav ul ul li a {
 nav ul ul ul {
     top: 0; /* Lower the secondary dropdown menu */
     left: -100%; /* Position the submenu to the left of its parent menu item */
-    width: 150px; /* Adjust this width to make the submenu larger */
+    width: 160px; /* Adjust this width to make the submenu larger */
 }
 
 nav ul li:hover > ul {
