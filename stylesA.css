@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    background-color: rgba(51, 51, 51, 0.5);
+    background-color: rgba(51, 51, 51, 0.3); 
     color: #fff;
     padding: 15px 20px;
     display: flex;
@@ -23,20 +23,71 @@ header {
     font-size: medium;
 }
 
+header a {
+    color: #fff; 
+    text-decoration: none;
+}
+
 nav ul {
     list-style: none;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
+    position: relative;
     margin-right: 10px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px; /* Padding for header items */
+    display: block;
 }
+
+nav ul li a:hover, nav ul li:hover > a {
+    background-color: transparent; /* Remove background color on hover */
+}
+
+nav ul li.dropdown > a::after {
+    content: " ▼";
+    font-size: 0.7em;
+    align-items: center;    
+
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position the dropdown menu below its parent menu item */
+    left: 0; /* Position the dropdown menu to the left of its parent menu item */
+    background-color: rgba(65, 48, 176, 0.3); /* Background color for dropdown */
+    padding: 0;
+    opacity: 1; /* Make the dropdown visible */
+    width: 160px; /* Adjust this width to make the menu larger */
+}
+
+nav ul ul li {
+    display: block;
+    width: 100%;
+}
+
+nav ul ul li a {
+    padding: 15px 20px; /* Increased padding for dropdown menu items */
+}
+
+nav ul ul ul {
+    top: 0; /* Lower the secondary dropdown menu */
+    left: -100%; /* Position the submenu to the left of its parent menu item */
+    width: 160px; /* Adjust this width to make the submenu larger */
+}
+
+nav ul li:hover > ul {
+    display: block; /* Show the dropdown menu on hover */
+}
+
 
 main {
     padding: 20px;
@@ -86,4 +137,18 @@ footer a {
     color: #fff;
     text-decoration: none;
     font-size: larger;
+}
+.left-options, .right-option {
+    display: flex;
+    align-items: center; /* Ensure vertical alignment */
+}
+
+.right-option {
+    display: flex;
+    align-items: center; /* Ensure vertical alignment */
+}
+
+.title {
+    flex-grow: 1;
+    text-align: center;
 }

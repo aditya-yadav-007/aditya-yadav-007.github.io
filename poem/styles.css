@@ -1,0 +1,79 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-image: url('background.jpg'); /* Replace with your image file path */
+    height: calc(100%); /* Adjust height to accommodate buttons */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.poem-box {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    text-align: center;
+    opacity: 0.9; /* Start semi-transparent */
+    transition: opacity 0.5s, transform 0.5s, z-index 0.5s; /* Transition effect */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.poem-box p {
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#yesButton {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+#noButton {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+#thankYouMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6em;
+    color: white;
+    text-shadow: 0 0 10px #c6af49, 0 0 20px #4CAF50, 0 0 30px #4CAF50, 0 0 40px #4CAF50;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 1000; /* Ensure it's on top */
+}
