@@ -1,20 +1,27 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('BLKCHCRY.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body, html {
+    background-image: url('background.jpg'); /* Replace with your image file path */
     height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'MyCustomFont', Arial, sans-serif;
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .container {
-    background-image: url('background.jpg'); /* Replace with your image file path */
-    height: calc(100%); /* Adjust height to accommodate buttons */
-    width: calc(100%);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    width: 100%;
+    padding: 20px; /* Adjust padding to ensure contents don't touch the edges */
+    box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
 .poem-box {
@@ -22,20 +29,22 @@ body, html {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 380px;
+    width: 80%; /* Adjust width as needed */
+    max-width: 380px; /* Ensure it doesn't get too wide on large screens */
+    margin: 100px auto; /* Center it horizontally and add top margin */
     text-align: center;
     opacity: 0.9; /* Start semi-transparent */
     transition: opacity 0.5s, transform 0.5s, z-index 0.5s; /* Transition effect */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .poem-box p {
     margin: 0;
-    font-size: 1.1em;
+    font-size: 1.3em;
     line-height: 1.5;
+}
+
+.poem-box h1 {
+    margin-top: 0;
 }
 
 .buttons {
