@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             })
         }).then(response => {
             if (response.ok) {
-                alert('Your response has been sent. Thank you!');
+                alert('I Love You ❤️');
             } else {
                 alert('There was an issue sending your response.');
             }
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             })
         }).then(response => {
             if (response.ok) {
-                alert('Your response has been sent. Thank you!');
+                alert('😭😭');
             } else {
                 alert('There was an issue sending your response.');
             }
