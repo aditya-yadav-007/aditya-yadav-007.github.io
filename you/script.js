@@ -1,53 +1,48 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', (event) => {
     const yesButton = document.getElementById('yesButton');
     const noButton = document.getElementById('noButton');
-    const thankYouMessage = document.getElementById('thankYouMessage');
 
-    yesButton.addEventListener('click', function() {
-        // Show the glowing "Thank You" message
-        thankYouMessage.style.opacity = '1';
+    yesButton.addEventListener('click', () => {
+        // Open the desired website
+        window.open('https://coderr.me/yes', '_blank');
 
-        // Send email via Formspree
-        sendEmail('She said Yes');
-    });
-
-    noButton.addEventListener('click', function() {
-        // Send email via Formspree
-        sendEmail('She said No');
-    });
-
-    function sendEmail(response) {
-        fetch('https://formspree.io/f/xeojggbq', { // Replace with your Formspree endpoint
+        // Send message to Formspree
+        fetch('https://formspree.io/f/xeojggbq', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json'
             },
-            body: new URLSearchParams({
-                response: response
+            body: JSON.stringify({
+                message: 'She said Yes'
             })
-        })
-        .then(response => {
+        }).then(response => {
             if (response.ok) {
-                // Handle success
-                console.log('Email sent successfully.');
-                thankYouMessage.textContent = 'Thank you for your response!';
-                // Optionally, you can hide the message after a delay
-                setTimeout(() => thankYouMessage.style.opacity = '0', 3000);
+                alert('Your response has been sent. Thank you!');
             } else {
-                // Handle server-side errors
-                console.error('Error sending email:', response.statusText);
+                alert('There was an issue sending your response.');
             }
-        })
-        .catch(error => {
-            // Handle network errors
-            console.error('Error:', error);
         });
-    }
+    });
 
-    // Hide the "Thank You" message when clicking anywhere else
-    document.addEventListener('click', function(event) {
-        if (!thankYouMessage.contains(event.target) && event.target !== yesButton) {
-            thankYouMessage.style.opacity = '0';
-        }
+    noButton.addEventListener('click', () => {
+        // Open the desired website
+        window.open('https://coderr.me/no', '_blank');
+
+        // Send message to Formspree
+        fetch('https://formspree.io/f/xeojggbq', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: 'She said No'
+            })
+        }).then(response => {
+            if (response.ok) {
+                alert('Your response has been sent. Thank you!');
+            } else {
+                alert('There was an issue sending your response.');
+            }
+        });
     });
 });
