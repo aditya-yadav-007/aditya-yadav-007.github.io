@@ -20,17 +20,17 @@ body, html {
 
 .container {
     width: 100%;
-    padding: 20px; /* Adjust padding to ensure contents don't touch the edges */
+    padding: 10px; /* Adjust padding to ensure contents don't touch the edges */
     box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
 .poem-box {
     background: rgba(255, 255, 255, 0.6);
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 80%; /* Adjust width as needed */
-    max-width: 380px; /* Ensure it doesn't get too wide on large screens */
+    max-width: 380svh; /* Ensure it doesn't get too wide on large screens */
     margin: 100px auto; /* Center it horizontally and add top margin */
     text-align: center;
     opacity: 0.9; /* Start semi-transparent */
