@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     yesButton.addEventListener('click', () => {
         // Open the desired website
-        window.open('https://coderr.me/yes', '_blank');
+        window.open('https://coderr.me/you/yes', '_blank');
 
         // Send message to Formspree
         fetch('https://formspree.io/f/xeojggbq', {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     noButton.addEventListener('click', () => {
         // Open the desired website
-        window.open('https://coderr.me/no', '_blank');
+        window.open('https://coderr.me/you/no', '_blank');
 
         // Send message to Formspree
         fetch('https://formspree.io/f/xeojggbq', {
