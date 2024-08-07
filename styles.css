@@ -20,6 +20,8 @@ header {
     justify-content: space-between;
     align-items: center;
     font-size: medium;
+    height: 55px;
+    width: 192.6vh;
 }
 
 header a {
