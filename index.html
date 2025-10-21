@@ -1,102 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
-    <title>My Dungeon</title>
-    <link rel="icon" href="ICOs/milky-way.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="ICOs/milky-way.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminal Website</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <div class="left-options">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </nav>
-        </div>
-        <h1 class="title"><a href="Mat/mat.html" target="_blank">Welcome to My Dungeon 🌃</a></h1>
-        <div class="right-option">
-            <nav>
-                <ul>
-                    <li class="dropdown">
-                        <a href="#">Articles</a>
-                        <ul class="dropdown-content">
-                            <li class="dropdown">
-                                <a href="#">Physics</a>
-                                <ul class="dropdown-content">
-                                    <li><a href="#">Quantum Mechanics</a></li>
-                                    <li><a href="#">Newtonian Physics</a></li>
-                                    <li><a href="#">Particle Physics</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Chemistry</a>
-                                <ul class="dropdown-content">
-                                    <li><a href="#">Organic Chemistry</a></li>
-                                    <li><a href="#">Inorganic Chemistry</a></li>
-                                    <li><a href="#">Physical Chemistry</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Mathematics</a>
-                                <ul class="dropdown-content">
-                                    <li><a href="#">Calculus</a></li>
-                                    <li><a href="#">Algebra</a></li>
-                                    <li><a href="#">Statistics</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <nav>
-                <ul>
-                    <li class="dropdown">
-                        <a href="#">Tutorials</a>
-                        <ul class="dropdown-content">
-                            <li >
-                                <a href="#">Cyber Security</a>
-                               <!---- <ul class="dropdown-content">
-                                    <li><a href="#">Ethical Hacking</a></li>
-                                    <li><a href="#">Network Security</a></li>
-                                    <li><a href="#">Cryptography</a></li>
-                                </ul>-->
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Coding</a>
-                               <ul class="dropdown-content">
-                                    <li><a href="#">Python</a></li>
-                                    <li><a href="#">Java</a></li>
-                                    <li><a href="#">C++</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Electronics</a>
-                                <ul class="dropdown-content">
-                                    <li><a href="#">Arduino</a></li>
-                                    <li><a href="#">Transistor Circuitry</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <a href="Projects.html">Projects</a>
-        </div>
-    </header>
-    <main>
-        <section id="home">
-            <p>Feel free to explore!</p>
-            <br>
-            <p>Work in Progress</p>
-        </section>
-    </main>
-    <footer>
-        <p>Powered by <a href="https://www.youtube.com/channel/UCsmh4j36na1zVXco0dhmU4A" target="_blank">Aditya Aerospace</a></p>
-    </footer>
-    
+  <div id="terminal">
+    <div id="output"></div>
+    <div id="input-line">
+  <span id="prompt">user@guest></span>
+  <span id="typed"></span><span id="cursor">█</span>
+</div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
