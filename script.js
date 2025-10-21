@@ -39,7 +39,7 @@ function handleCommand(input) {
   if (!cmd) return;
 
   // Show prompt + typed command
-  printOutput(`<span style="color:#90ee90;">user@guest&gt; </span><span style="color:white;">${cmd}</span>\n`);
+  printOutput(`<span style="color:#90ee90;">user@guest&gt;</span><span style="color:white;">${cmd}</span>\n`);
 
   const lowerCmd = cmd.toLowerCase();
 
