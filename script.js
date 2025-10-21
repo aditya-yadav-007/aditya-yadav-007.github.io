@@ -1,11 +1,10 @@
 const outputElement = document.getElementById("output");
 const typed = document.getElementById("typed");
 const cursor = document.getElementById("cursor");
-const hiddenInput = document.getElementById("hidden-input"); // hidden input for mobile
+const hiddenInput = document.getElementById("hidden-input");
 
 let buffer = "";
 
-// Print welcome message
 printOutput(
   "Welcome to my terminal demo!\n" +
   "This site is keyboard-only. Use Enter to run commands.\n" +
@@ -18,22 +17,19 @@ const commands = {
   help: "Available commands: skills, about, clear, help",
 };
 
-// Function to append text to output
+// Output helper
 function printOutput(text) {
   outputElement.innerHTML += text + "\n";
   outputElement.scrollTop = outputElement.scrollHeight;
 }
 
-// Execute a command
 function handleCommand(input) {
   const cmd = input.trim();
   if (!cmd) return;
 
-  // Show prompt + typed command
   printOutput(`<span style="color:#90ee90;">user@guest&gt; </span><span style="color:white;">${cmd}</span>\n`);
 
   const lowerCmd = cmd.toLowerCase();
-
   if (lowerCmd === "clear") {
     outputElement.innerHTML = "";
   } else if (commands[lowerCmd]) {
@@ -43,38 +39,23 @@ function handleCommand(input) {
   }
 }
 
-// Handle desktop key events
-document.addEventListener("keydown", (e) => {
-  if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
-    buffer += e.key;
-    typed.textContent = buffer;
-  } else if (e.key === "Backspace") {
-    buffer = buffer.slice(0, -1);
-    typed.textContent = buffer;
-    e.preventDefault();
-  } else if (e.key === "Enter") {
+// Update typed text from hidden input
+hiddenInput.addEventListener("input", () => {
+  buffer = hiddenInput.value;
+  typed.textContent = buffer;
+});
+
+// Submit on Enter
+hiddenInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
     handleCommand(buffer);
     buffer = "";
     typed.textContent = "";
-    if (hiddenInput) hiddenInput.value = "";
+    hiddenInput.value = "";
     e.preventDefault();
   }
 });
 
-// Mirror hidden input for mobile keyboards
-if (hiddenInput) {
-  hiddenInput.addEventListener("input", () => {
-    buffer = hiddenInput.value;
-    typed.textContent = buffer;
-  });
-}
-
-// Focus handling
-document.addEventListener("click", () => {
-  if (hiddenInput) hiddenInput.focus();
-  else typed.focus();
-});
-window.onload = () => {
-  if (hiddenInput) hiddenInput.focus();
-  else typed.focus();
-};
+// Focus the hidden input when terminal is tapped
+document.getElementById("terminal").addEventListener("click", () => hiddenInput.focus());
+window.onload = () => hiddenInput.focus();

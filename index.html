@@ -12,8 +12,10 @@
     <div id="input-line">
   <span id="prompt">user@guest ></span>
   <span id="typed"></span><span id="cursor">█</span>
-  <input type="text" id="hidden-input" style="position:absolute; opacity:0; height:0; width:0;" />
+  <!-- Offscreen input for mobile keyboards -->
+  <input type="text" id="hidden-input" style="position:absolute; left:-9999px; top:0;" />
 </div>
+
   </div>
 
   <script src="script.js"></script>
