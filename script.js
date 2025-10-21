@@ -5,11 +5,22 @@ const hiddenInput = document.getElementById("hidden-input");
 
 let buffer = "";
 
-printOutput(
-  "Welcome to my terminal demo!\n" +
-  "This site is keyboard-only. Use Enter to run commands.\n" +
-  "Type 'help' to see available commands.\n"
-);
+printOutput(`
+=============================================================
+ $$$$$$\\              $$\\      $$\\                           
+$$  __$$\\             $$ |     $$ |                          
+$$ /  $$ | $$$$$$\  $$$$$$\\    $$$$$$$\   $$$$$$\\   $$$$$$\\  
+$$$$$$$$ |$$  __$$\\ \\_$$  _|   $$  __$$\\ $$  __$$\\ $$  __$$\\ 
+$$  __$$ |$$$$$$$$ |  $$ |     $$ |  $$ |$$$$$$$$ |$$ |  \\__|
+$$ |  $$ |$$   ____|  $$ |$$\\  $$ |  $$ |$$   ____|$$ |      
+$$ |  $$ |\\$$$$$$$\\   \\$$$$  | $$ |  $$ |\\$$$$$$$\\ $$ |      
+\\__|  \\__| \\_______|   \\____/  \\__|  \\__| \\_______|\\__|      
+
+-------------------------------------------------------------
+     Welcome to Aditya Yadav’s Interactive Terminal
+     Type 'help' to view available commands.
+=============================================================
+`);
 
 const commands = {
   skills: "Skills: HTML, CSS, JavaScript, Python, C, Embedded Systems.",
@@ -27,10 +38,13 @@ function handleCommand(input) {
   const cmd = input.trim();
   if (!cmd) return;
 
+  // Show prompt + typed command
   printOutput(`<span style="color:#90ee90;">user@guest&gt; </span><span style="color:white;">${cmd}</span>\n`);
 
   const lowerCmd = cmd.toLowerCase();
+
   if (lowerCmd === "clear") {
+    // Clear the terminal output
     outputElement.innerHTML = "";
   } else if (commands[lowerCmd]) {
     printOutput(commands[lowerCmd] + "\n");
@@ -38,6 +52,7 @@ function handleCommand(input) {
     printOutput("Command not found. Type \"help\" for list.\n");
   }
 }
+
 
 // Update typed text from hidden input
 hiddenInput.addEventListener("input", () => {
