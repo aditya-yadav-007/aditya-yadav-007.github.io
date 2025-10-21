@@ -12,7 +12,6 @@ body {
 
 #terminal {
   width: 90%;
-  max-width: 1000px;
   height: 90%;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
