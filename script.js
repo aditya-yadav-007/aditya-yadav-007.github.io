@@ -20,12 +20,22 @@ $$ |  $$ |\\$$$$$$$\\   \\$$$$  | $$ |  $$ |\\$$$$$$$\\ $$ |
      Welcome to Aditya Yadav’s Interactive Terminal
      Type 'help' to view available commands.
 =============================================================
+
 `);
 
 const commands = {
-  skills: "Skills: HTML, CSS, JavaScript, Python, C, Embedded Systems.",
+  skills: "$$ Penetration Testing (Ethical Hacking): Burp Suite, Metasploit, Nmap, Wireshark, Hashcat, John the Ripper, Aircrack-ng, OpenVAS, Nessus\n\
+$$ Reverse Engineering: Ghidra, x64dbg, edb-debugger, Ollydbg, Radare2\n\
+$$ Digital Forensics: Autopsy, Volatility, FTK Imager, Sleuth Kit, Memory & Disk Forensics\n\
+$$ Hardware Pentesting: SPI, UART, IIC, JTAG, RS232, RS485, SDR (Software Defined Radio)\n\
+$$ Networking & Security Protocols: TCP/IP, DNS, DHCP, VPNs, SSL/TLS, Wi-Fi Security, Packet Sniffing & Analysis\n\
+$$ Shell Scripting: Bash, PowerShell\n\
+$$ Programming & Scripting: C, Python, Assembly (x64 & ARM), Java, JavaScript, C++, MySQL, COBOL",
+
   about: "This is a terminal-style website built using HTML, CSS, and JS.",
   help: "Available commands: skills, about, clear, help",
+  pwd: "/home/usr/guest"
+
 };
 
 // Output helper
@@ -43,12 +53,21 @@ function handleCommand(input) {
 
   const lowerCmd = cmd.toLowerCase();
 
-  if (lowerCmd === "clear") {
-    // Clear the terminal output
+    if (lowerCmd === "clear") 
+  {
     outputElement.innerHTML = "";
-  } else if (commands[lowerCmd]) {
+  } 
+  else if (lowerCmd === "skills-more") 
+  {
+    printOutput("Opening detailed skills page...\n");
+    window.open("./skills/index.html", "_blank"); // <-- change URL here
+  }
+  else if (commands[lowerCmd]) 
+  {
     printOutput(commands[lowerCmd] + "\n");
-  } else {
+  } 
+  else 
+  {
     printOutput("Command not found. Type \"help\" for list.\n");
   }
 }
