@@ -9,7 +9,7 @@ printOutput(`
 =============================================================
  $$$$$$\\              $$\\      $$\\                           
 $$  __$$\\             $$ |     $$ |                          
-$$ /  $$ | $$$$$$\  $$$$$$\\    $$$$$$$\   $$$$$$\\   $$$$$$\\  
+$$ /  $$ | $$$$$$\  $$$$$$\\     $$$$$$$\   $$$$$$\\   $$$$$$\\  
 $$$$$$$$ |$$  __$$\\ \\_$$  _|   $$  __$$\\ $$  __$$\\ $$  __$$\\ 
 $$  __$$ |$$$$$$$$ |  $$ |     $$ |  $$ |$$$$$$$$ |$$ |  \\__|
 $$ |  $$ |$$   ____|  $$ |$$\\  $$ |  $$ |$$   ____|$$ |      
@@ -31,9 +31,10 @@ $$ Hardware Pentesting: SPI, UART, IIC, JTAG, RS232, RS485, SDR (Software Define
 $$ Networking & Security Protocols: TCP/IP, DNS, DHCP, VPNs, SSL/TLS, Wi-Fi Security, Packet Sniffing & Analysis\n\
 $$ Shell Scripting: Bash, PowerShell\n\
 $$ Programming & Scripting: C, Python, Assembly (x64 & ARM), Java, JavaScript, C++, MySQL, COBOL",
-
+  ls: "Access denied",
+  sudo : "F*** Off",
   about: "This is a terminal-style website built using HTML, CSS, and JS.",
-  help: "Available commands: skills, about, clear, help",
+  help: "Available commands: \n\ $ skills \n\ $ about \n\ $ clear \n\ $ help \n\ $ skills-more \n\ (Don't add $)",
   pwd: "/home/usr/guest"
 
 };
@@ -61,6 +62,11 @@ function handleCommand(input) {
   {
     printOutput("Opening detailed skills page...\n");
     window.open("./skills/index.html", "_blank"); // <-- change URL here
+  }
+  else if (lowerCmd === "vim") 
+  {
+    printOutput("Not here buddy\n");
+    window.open("https://www.vim.org/", "_blank"); // <-- change URL here
   }
   else if (commands[lowerCmd]) 
   {
