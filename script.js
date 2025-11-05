@@ -30,22 +30,14 @@ printOutput(banner);
 
 const commands = 
 {
-  skills: '$$ Penetration Testing (Ethical Hacking): Burp Suite, Metasploit, Nmap, Wireshark, Hashcat, John the Ripper, Aircrack-ng, OpenVAS, Nessus\n\
-$$ Reverse Engineering: Ghidra, x64dbg, edb-debugger, Ollydbg, Radare2\n\
-$$ Digital Forensics: Autopsy, Volatility, FTK Imager, Sleuth Kit, Memory & Disk Forensics\n\
-$$ Hardware Pentesting: SPI, UART, IIC, JTAG, RS232, RS485, SDR (Software Defined Radio)\n\
-$$ Networking & Security Protocols: TCP/IP, DNS, DHCP, VPNs, SSL/TLS, Wi-Fi Security, Packet Sniffing & Analysis\n\
-$$ Shell Scripting: Bash, PowerShell\n\
-$$ Programming & Scripting: C, Python, Assembly (x64 & ARM), Java, JavaScript, C++, MySQL, COBOL',
   ls: "Access denied",
   sudo : "F*** Off",
   about: "This is a terminal-style website built using HTML, CSS, and JS.",
-  help: "Available commands: \n\ $ help  \n\ $ about \n\ $ clear \n\ $ skills \n\ $ skills-more  \n\ $ exit \n\ $ date  \n\ $ help [command] - for more info  \n\ $ curl \n\ $ echo \n\ $ banner \n\ $ projects \n\ $ linkein  \n\ $ github \n\ $ repo \n\ $ orcid \n\ (Don't add $)",
   pwd: "/home/usr/guest",
   exit: "Click on the X on the top right of the browser to exit",
   education: "$ Class 12th from ISC = 84%",
   email : "Contact me at aditya.ry2007@gmail.com",
-  certfications: "Will surely get few",
+  certifications: "$ Introduction to Cybersecurity - Cisco \n$ Computer Hardware Basics - Cisco",
   repo: "",
   github: "https://github.com/aditya-yadav-007",
   linkedin: "https://www.linkedin.com/in/aditya-r-yadav/",
@@ -54,11 +46,25 @@ $$ Programming & Scripting: C, Python, Assembly (x64 & ARM), Java, JavaScript, C
 
 };
 
+const help = "Available commands: \n\ $ help \n\ $ help [command] - for more detailed info \n\ $ clear \n\ $ exit \n\ $ date \n\ $ echo \n\ $ curl \n\ $ pwd \n\ $ whoami \n\ $ about \n\ $ repo \n\ $ skills \n\ $ projects \n\ $ eductaion \n\ $ experience \n\ $ github \n\ $ email \n\ $ linkedin \n\ $ orcid \n\ (Don't add $)";
 const helpDetails = {
-  skills: "skills — Lists core technical and creative skills. For complete detail use skills-more",
-  about: "about — Displays information about the purpose of this terminal.",
+  skills: "Lists core technical and creative skills.",
+  about: "Displays information about the purpose of this terminal.",
+  exit: "Helps you exit this page",
+  date: "Shows Date and Time",
   clear: "clear — Clears all text from the terminal screen.",
-  help: "help [command] — Displays detailed info about the given command.",
+  help: "Seriously ??!!! 😑",
+  echo: "echo [text] - prints the \" text\" ",
+  curl: "idk, try and find out \n\ curl [link \\ ip]",
+  pwd: "Prints working directory",
+  whoami: "🤐",
+  repo: "Github Repostiry of the Website",
+  projects: "Projects that I have worked on",
+  education: "My education",
+  github: "My GitHub Profile",
+  email: "My email",
+  linkedin: "My LinkedIn",
+  orcid: "My ORCId",
 };
 
 
@@ -73,7 +79,7 @@ function handleCommand(input)
   const cmd = input.trim();
   if (!cmd) return;
   // Show prompt + typed command
-  printOutput(`<span style="color:#90ee90;">user@guest&gt;</span><span style="color:white;">${cmd}</span>\n`);
+  printOutput(`<span style="color:#90ee90;">user@guest&gt$ </span><span style="color:white;">${cmd}</span>\n`);
 
   const parts = cmd.toLowerCase().split(" ");
   const base = parts[0];
@@ -102,10 +108,9 @@ function handleCommand(input)
         printOutput(`No detailed help found for '${arg}'.\n`);  
         }
     }
-    if (commands[base])
+    else
       {
-        // Show available commands
-        printOutput(commands[base]+"\n");
+        printOutput(help+"\n");
       }
     
   } 
@@ -140,7 +145,7 @@ Server: Aether-Terminal\n`);
   const formatted = now.toLocaleString(); // e.g. "10/22/2025, 4:35:10 PM"
   printOutput(`${formatted}\n`);
   }
-  else if (base === "skills-more") 
+  else if (base === "skills") 
   {
     printOutput("Opening detailed skills page...\n");
     window.open("./skills/index.html", "_blank"); // <-- change URL here

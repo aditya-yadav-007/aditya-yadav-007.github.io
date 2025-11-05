@@ -1,0 +1,98 @@
+/* --- Global Styles and Dark Theme --- */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(rgba(10, 15, 10, 0.85), rgba(10, 15, 10, 0.85)),
+        url("background.png") center/cover no-repeat fixed;
+
+    color: #d4d4d4;
+    font-family: "JetBrains Mono", Consolas, monospace;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Title Styling --- */
+.title {
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #77ff58;
+    text-shadow: 0 0 15px rgba(119, 255, 88, 0.4);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* --- Grid Container Layout --- */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr)); /* narrower boxes */
+    gap: 50px;                 /* spacing between boxes */
+    max-width: 900px;           /* overall grid max width */
+    width: 90%;
+    justify-items: center;       /* centers items horizontally */
+    align-items: center;         /* centers items vertically */
+}
+
+/* --- Box Styling (Grid Items) --- */
+.grid-item {
+    text-decoration: none;
+    color: #d4d4d4;
+
+    background: rgba(25, 30, 25, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1.6px solid #1f6f3c;
+    border-radius: 8px;
+    padding: 15px 20px;         /* slim height, narrow width */
+    width: 100%;
+    max-width: 220px;            /* limits horizontal expansion */
+    text-align: center;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+    box-shadow: 0 0 8px rgba(0, 255, 100, 0.08);
+}
+
+/* --- Hover Effect --- */
+.grid-item:hover {
+    background: rgba(30, 40, 30, 0.85);
+    border-color: #77ff58;
+    box-shadow: 0 0 15px rgba(119, 255, 88, 0.25);
+    transform: translateY(-3px);  /* subtle lift */
+}
+
+/* --- Bookmark/Link Icon Styling --- */
+.bookmark-icon {
+    font-size: 0.9em;
+    color: #a0a0a0;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+}
