@@ -49,6 +49,7 @@ const commands =
 const help = "Available commands: \n\ $ help \n\ $ help [command] - for more detailed info \n\ $ clear \n\ $ exit \n\ $ date \n\ $ echo \n\ $ curl \n\ $ pwd \n\ $ whoami \n\ $ about \n\ $ repo \n\ $ skills \n\ $ projects \n\ $ eductaion \n\ $ experience \n\ $ github \n\ $ email \n\ $ linkedin \n\ $ orcid \n\ (Don't add $)";
 const helpDetails = {
   skills: "Lists core technical and creative skills.",
+  certifications: "Certifications that I have",
   about: "Displays information about the purpose of this terminal.",
   exit: "Helps you exit this page",
   date: "Shows Date and Time",
@@ -159,6 +160,11 @@ Server: Aether-Terminal\n`);
   {
     printOutput("Not here buddy\n");
     window.open("https://www.vim.org/", "_blank"); // <-- change URL here
+  }
+  else if (base === "certifications") 
+  {
+    printOutput("Opening detailed certifictions page...\n");
+    window.open("./cert/index.html", "_blank"); // <-- change URL here
   }
   else if (commands[base]) 
   {

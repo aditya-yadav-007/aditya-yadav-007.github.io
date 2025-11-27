@@ -7,34 +7,81 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main">
-        <h1 class="title">Skills</h1>
-        <div class="container">
-            <a href="https://www.google.com" target="_blank" class="grid-item">
-                Penetration Testing   
-                <span class="bookmark-icon">⚔️</span>
-            </a>
-            <a href="https://www.google.com" target="_blank" class="grid-item">
-                Reverse Engineering
-                <span class="bookmark-icon">🔬</span>
-            </a>
-            <a href="https://www.google.com" target="_blank" class="grid-item">
-                Digital Forensics
-                <span class="bookmark-icon">🔍</span>
-            </a>
-            <a href="https://www.google.com" target="_blank" class="grid-item">
-                Hardware Pentesting
-                <span class="bookmark-icon">🕹️</span>
-            </a>
-            <a href="https://www.google.com" target="_blank" class="grid-item">
-                Network Security
-                <span class="bookmark-icon">🧱</span>
-            </a>
-            <a href="https://www.google.com" target="_blank" class="grid-item">
-                Programming
-                <span class="bookmark-icon">💻</span>
-            </a>
+    <div class="container">
+        <header class="header">
+            <h1>Skills</h1>
+        </header>
+        
+        <div class="gallery">
+            <div class="box" data-link="#penetration-testing">
+                <div class="image-container">
+                    <img src="./img/PT.png" alt="Cybersecurity and penetration testing">
+                </div>
+                <div class="text-container">
+                    <p>Penetration Testing ⚔️</p>
+                </div>
+            </div>
+            
+            <div class="box" data-link="#reverse-engineering">
+                <div class="image-container">
+                    <img src="./img/RE.png" alt="Code analysis and reverse engineering">
+                </div>
+                <div class="text-container">
+                    <p>Reverse Engineering 🔬</p>
+                </div>
+            </div>
+            
+            <div class="box" data-link="#digital-forensics">
+                <div class="image-container">
+                    <img src="./img/DF.png" alt="Digital forensics investigation">
+                </div>
+                <div class="text-container">
+                    <p>Digital Forensics 🔍</p>
+                </div>
+            </div>
+            
+            <div class="box" data-link="#hardware-pentesting">
+                <div class="image-container">
+                    <img src="./img/HP.png" alt="Hardware security testing">
+                </div>
+                <div class="text-container">
+                    <p>Hardware Pentesting 🕹️</p>
+                </div>
+            </div>
+            
+            <div class="box" data-link="#network-security">
+                <div class="image-container">
+                    <img src="./img/NS.png" alt="Network security infrastructure">
+                </div>
+                <div class="text-container">
+                    <p>Network Security 🧱</p>
+                </div>
+            </div>
+            
+            <div class="box" data-link="#programming">
+                <div class="image-container">
+                    <img src="./img/P.png" alt="Programming and development">
+                </div>
+                <div class="text-container">
+                    <p>Programming 💻</p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Skill Details Modal -->
+<!-- Skill Details Modal -->
+<div id="skillModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+            <h2 id="modalTitle">Skill Details</h2>
+        </div>
+        <div class="modal-body" id="modalBody">
+            <!-- Content will be loaded here -->
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
 </body>
 </html>
